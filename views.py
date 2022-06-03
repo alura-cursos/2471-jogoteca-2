@@ -32,6 +32,16 @@ def criar():
 
     return redirect(url_for('index'))
 
+@app.route('/editar')
+def editar():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login', proxima=url_for('editar')))
+    return render_template('editar.html', titulo='Editando Jogo')
+
+@app.route('/atualizar', methods=['POST',])
+def atualizar():
+    pass
+
 @app.route('/login')
 def login():
     proxima = request.args.get('proxima')
