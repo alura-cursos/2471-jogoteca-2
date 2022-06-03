@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogoteca</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
   <body>
     <div class="container">
@@ -31,11 +32,11 @@
                 {{ form.senha.label(class="form-label") }}
                 {{ form.senha(class="form-control") }}
             </div>
-            <div class="form-group">
+            <div class="form-group buttons">
                 {{ form.login(class="btn btn-primary") }}
+                <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
             </div>
         </form>
-        <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
     </div>
 </body>
 </html>
