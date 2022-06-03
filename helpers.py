@@ -7,3 +7,8 @@ def recupera_imagem(id):
             return nome_arquivo
 
     return 'capa_padrao.jpg'
+
+def deleta_arquivo(id):
+    arquivo = recupera_imagem(id)
+    if arquivo != 'capa_padrao.jpg':
+        os.remove(os.path.join(app.config['UPLOAD_PATH']), arquivo)
