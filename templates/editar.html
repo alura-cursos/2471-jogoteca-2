@@ -2,6 +2,7 @@
 {% block conteudo %}
       <form action="{{ url_for('atualizar') }}" method="post">
         <fieldset>
+          <input type="hidden" name="id" value="{{ jogo.id }}">
           <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" class="form-control" value="{{ jogo.nome }}">
